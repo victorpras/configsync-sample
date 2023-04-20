@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: wp
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: wp
+  name: wp-config
+data:
+### We're using a ConfigMap for simplicity, but in real life one should
+### use a secret manager or other best practice for this database password.
+  MYSQL_ROOT_PASSWORD: "wp_user"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: wp-test
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: wp-test
+  name: wp-config-test
+data:
+### We're using a ConfigMap for simplicity, but in real life one should
+### use a secret manager or other best practice for this database password.
+  MYSQL_ROOT_PASSWORD: "wp_user_test"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: wp-test1
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: wp-test1
+  name: wp-config-test1
+data:
+### We're using a ConfigMap for simplicity, but in real life one should
+### use a secret manager or other best practice for this database password.
+  MYSQL_ROOT_PASSWORD: "wp_user_test1"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: wp-test2
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: wp-test2
+  name: wp-config-test2
+data:
+### We're using a ConfigMap for simplicity, but in real life one should
+### use a secret manager or other best practice for this database password.
+  MYSQL_ROOT_PASSWORD: "wp_user_test2"
